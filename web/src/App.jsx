@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.scss';
 
 class App extends Component {
   state = {
     loading: false,
-    input: "Type something...",
-    result: "To get started, edit src/App.js and save to reload."
+    input: 'Type something...',
+    result: 'To get started, edit src/App.js and save to reload.'
   };
 
   handleChange = e => {
@@ -20,7 +20,7 @@ class App extends Component {
       loading: true
     });
 
-    const response = await fetch("/api/reverse/" + this.state.input);
+    const response = await fetch('/api/reverse/' + this.state.input);
     const result = await response.json();
 
     this.setState({
@@ -36,19 +36,13 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
           <div>
-            <input
-              type="text"
-              value={this.state.input}
-              onChange={this.handleChange}
-            />
+            <input type="text" value={this.state.input} onChange={this.handleChange} />
             <button onClick={this.handleClick} disabled={this.state.loading}>
-              {this.state.loading ? "Loading..." : "Call reverse API"}
+              {this.state.loading ? 'Loading...' : 'Call reverse API'}
             </button>
           </div>
         </div>
-        <p className="App-intro">
-          {this.state.result}
-        </p>
+        <p className="App-intro">{this.state.result}</p>
       </div>
     );
   }

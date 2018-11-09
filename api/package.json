@@ -1,9 +1,10 @@
 {
   "name": "sample-api",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "normalize-port": "^1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
